@@ -31,13 +31,13 @@ DWORD GetModule(const char* module) {
 	return 0;
 }
 
+//grab fresh offsets/netvars here
+//https://github.com/frk1/hazedumper/blob/master/csgo.hpp
 #define dwEntityList 0x4D04A94
 #define m_flDetectedByEnemySensorTime 0x3960
 #define m_bSpotted 0x93D
-//#define m_lifeState 0x25F
-//#define m_bDormant 0xED
 
-void __stdcall NoCRTMain() {
+int main() {
 	HANDLE Vidya = GetHandle("csgo.exe");
 	DWORD ClientDLL = GetModule("client_panorama.dll");
 	while (true) {
